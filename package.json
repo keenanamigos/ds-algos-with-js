@@ -4,7 +4,8 @@
   "description": "Code and Exercises from the book Data Structures and Algorithms with JavaScript done in TypeScript",
   "main": "index.js",
   "scripts": {
-    "test": "./node_modules/.bin/mocha --compilers ts:ts-node/register ./test/*.spec.ts"
+    "test": "./node_modules/.bin/mocha --compilers ts:ts-node/register ./test/*.spec.ts",
+    "run": "./node_modules/ts-node/dist/bin.js"
   },
   "author": "keenan johnson",
   "license": "ISC",
