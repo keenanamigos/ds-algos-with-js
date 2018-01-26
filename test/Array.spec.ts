@@ -12,6 +12,14 @@ describe("Student", () => {
     });
 
     describe("getGPA", () => {
-        it("should return a Grade Point Average rounded to two decimals");
-    })
+        it("should return an accurate Grade Point Average", () => {
+            const student: Student = new Student([90, 77, 55, 95, 95, 93, 91, 98, 85, 87, 84, 83]);
+            student.addGrade(80);
+            student.addGrade(84);
+            student.addGrade(78);
+
+            const GPA: number = student.getGPA();
+            expect(GPA).to.equal(85);
+        });
+    });
 });
