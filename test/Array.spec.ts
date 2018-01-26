@@ -28,8 +28,15 @@ describe("Student", () => {
 describe("Words", () => {
     describe("printArray", () => {
         it("should print the internal array", () => {
-            const words: Words = new Words();
-            expect(words.printArray().constructor).to.equal(Array);
+            const words: Words = new Words(["How", "Now", "Brown", "Cow"]);
+            expect(words.printArray()).to.deep.equal(["How", "Now", "Brown", "Cow"]);
+        });
+    });
+
+    describe("reverse", () => {
+        it("should print the internal array in reverse order", () => {
+            const words: Words = new Words(["How", "Now", "Brown", "Cow"]);
+            expect(words.reverse()).to.deep.equal(["Cow", "Brown", "Now", "How"]);
         });
     });
 });
