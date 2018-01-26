@@ -1,6 +1,7 @@
 import { expect } from "chai";
 import { Student } from "../src/chapter-2-arrays/exercises/exercise1";
 import { Words } from "../src/chapter-2-arrays/exercises/exercise2";
+import { WeeklyTemps } from "../src/chapter-2-arrays/exercises/exercise3";
 
 describe("Student", () => {
     describe("addGrade", () => {
@@ -37,6 +38,24 @@ describe("Words", () => {
         it("should print the internal array in reverse order", () => {
             const words: Words = new Words(["How", "Now", "Brown", "Cow"]);
             expect(words.reverse()).to.deep.equal(["Cow", "Brown", "Now", "How"]);
+        });
+    });
+});
+
+describe("WeeklyTemps", () => {
+    describe("add", () => {
+        it("should add a new week of temperatures to the data store", () => {
+            const monthlyTemps: number[][] = [
+                [90, 87, 78, 85, 83, 82, 80],
+                [87, 82, 75, 70, 77, 90, 89],
+                [80, 70, 73, 87, 83, 76, 65],
+                [76, 70, 70, 60, 63, 81, 71]
+            ];
+
+            const Temps: WeeklyTemps = new WeeklyTemps(monthlyTemps);
+            Temps.add([86, 80, 75, 68, 69, 84, 77]);
+
+            expect(Temps.dataStore.length).to.equal(5);
         });
     });
 });

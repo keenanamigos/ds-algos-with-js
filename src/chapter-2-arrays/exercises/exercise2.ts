@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 // Problem
 /**
  * Store a set of words in an array and display the contents both forward and backward.

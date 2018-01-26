@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 // Problem
 /**
  * Create a grades object that stores a set of student grades in an object.
