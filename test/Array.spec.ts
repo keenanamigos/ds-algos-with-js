@@ -10,4 +10,8 @@ describe("Student", () => {
             expect(student.grades.length).to.equal(5);
         });
     });
+
+    describe("getGPA", () => {
+        it("should return a Grade Point Average rounded to two decimals");
+    })
 });
