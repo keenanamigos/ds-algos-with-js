@@ -1,5 +1,6 @@
 import { expect } from "chai";
 import { Student } from "../src/chapter-2-arrays/exercises/exercise1";
+import { Words } from "../src/chapter-2-arrays/exercises/exercise2";
 
 describe("Student", () => {
     describe("addGrade", () => {
@@ -20,6 +21,15 @@ describe("Student", () => {
 
             const GPA: number = student.getGPA();
             expect(GPA).to.equal(85);
+        });
+    });
+});
+
+describe("Words", () => {
+    describe("printArray", () => {
+        it("should print the internal array", () => {
+            const words: Words = new Words();
+            expect(words.printArray().constructor).to.equal(Array);
         });
     });
 });
