@@ -59,7 +59,7 @@ describe("WeeklyTemps", () => {
     });
 
     describe("averageMonth", () => {
-        it("should return the average for all the of temperatues in a given month", () => {
+        it("should return the average temperature for a given month", () => {
             const monthlyTemps: number[][] = [
                 [90, 87, 78, 85, 83, 82, 80],
                 [87, 82, 75, 70, 77, 90, 89],
@@ -68,8 +68,21 @@ describe("WeeklyTemps", () => {
             ];
 
             const Temps: WeeklyTemps = new WeeklyTemps(monthlyTemps);
-
             expect(Temps.averageMonth().toFixed(3)).to.equal("77.857");
+        });
+    });
+
+    describe("averageWeek", () => {
+        it("should return the average temperature for a given week", () => {
+            const monthlyTemps: number[][] = [
+                [90, 87, 78, 85, 83, 82, 80],
+                [87, 82, 75, 70, 77, 90, 89],
+                [80, 70, 73, 87, 83, 76, 65],
+                [76, 70, 70, 60, 63, 81, 71]
+            ];
+
+            const Temps = new WeeklyTemps(monthlyTemps);
+            expect(Temps.averageWeek(3).toFixed(3)).to.equal("76.286");
         });
     });
 });

@@ -35,6 +35,13 @@ export class WeeklyTemps {
         return (temperatureSum / totalMeasuredTemperatures);
     }
 
+    public averageWeek(week: number): number {
+        const measuredTemps: number = this.dataStore[week - 1].length;
+        const temperatureSum: number = this.getSum(...this.dataStore[week - 1]);
+
+        return (temperatureSum / measuredTemps);
+    }
+
     // Returns an object with a key for each week and a value representing the number of temperatures
     private getNumberOfTempsPerWeek(): object {
         const numberOfTemps = {};
