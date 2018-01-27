@@ -2,6 +2,7 @@ import { expect } from "chai";
 import { Student } from "../src/chapter-2-arrays/exercises/exercise1";
 import { Words } from "../src/chapter-2-arrays/exercises/exercise2";
 import { WeeklyTemps } from "../src/chapter-2-arrays/exercises/exercise3";
+import { Letters } from "../src/chapter-2-arrays/exercises/exercise4";
 
 describe("Student", () => {
     describe("addGrade", () => {
@@ -81,8 +82,17 @@ describe("WeeklyTemps", () => {
                 [76, 70, 70, 60, 63, 81, 71]
             ];
 
-            const Temps = new WeeklyTemps(monthlyTemps);
+            const Temps: WeeklyTemps = new WeeklyTemps(monthlyTemps);
             expect(Temps.averageWeek(3).toFixed(3)).to.equal("76.286");
+        });
+    });
+});
+
+describe("Letters", () => {
+    describe("singleString", () => {
+        it("should return the array of characters as a combined string", () => {
+            const letters: Letters = new Letters(["w", "o", "r", "d"]);
+            expect(letters.singleString()).to.equal("word");
         });
     });
 });
