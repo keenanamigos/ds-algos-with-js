@@ -18,6 +18,23 @@ export class WeeklyTemps {
         this.dataStore.push(temperature);
     }
 
+    public averageMonth(): number {
+        let temperatureSum = 0;
+        let totalMeasuredTemperatures = 0;
+        const tempsPerWeek: object = this.getNumberOfTempsPerWeek();
+        const weeklyTempKeys: string[] = Object.keys(tempsPerWeek);
+
+        for (const week of weeklyTempKeys) {
+            totalMeasuredTemperatures += tempsPerWeek[week];
+        }
+
+        for (const week of this.dataStore) {
+            temperatureSum += this.getSum(...week);
+        }
+
+        return (temperatureSum / totalMeasuredTemperatures);
+    }
+
     // Returns an object with a key for each week and a value representing the number of temperatures
     private getNumberOfTempsPerWeek(): object {
         const numberOfTemps = {};
