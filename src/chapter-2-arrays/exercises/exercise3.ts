@@ -42,6 +42,15 @@ export class WeeklyTemps {
         return (temperatureSum / measuredTemps);
     }
 
+    public showAllWeekAverages(): void {
+        // Set to 1 to access the 0th index of the dataStore array
+        let weekNumber = 1;
+        for (const week of this.dataStore) {
+            console.log(this.averageWeek(weekNumber).toFixed(3));
+            weekNumber++;
+        }
+    }
+
     // Returns an object with a key for each week and a value representing the number of temperatures
     private getNumberOfTempsPerWeek(): object {
         const numberOfTemps = {};
