@@ -17,4 +17,15 @@ export class WeeklyTemps {
     public add(temperature: number[]): void {
         this.dataStore.push(temperature);
     }
+
+    // Get the sum of temperatures for each week
+    private getSum(...temperatures: number[]): number {
+        let sum = 0;
+
+        for (const temperature of temperatures) {
+            sum += temperature;
+        }
+
+        return sum;
+    }
 }
