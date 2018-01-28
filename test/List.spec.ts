@@ -38,7 +38,7 @@ describe("List", () => {
         });
     });
 
-    describe.only("previous", () => {
+    describe("previous", () => {
         it("should move to the previous element in the list", () => {
             names.front();
             names.next();
