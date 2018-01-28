@@ -23,6 +23,11 @@ describe("List", () => {
             names.next();
             expect(names.getElement()).to.equal("Raymond");
         });
+
+        it("should throw an error when trying to access an element past the end of the list", () => {
+            names.end();
+            expect(names.next.bind(names.next)).to.throw(Error, `Position: ${this.position} is the last element of the list.`);
+        });
     });
 
     describe("append", () => {
