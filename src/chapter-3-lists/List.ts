@@ -60,4 +60,69 @@ export class List {
     public toString(): any[] {
         return this.dataStore;
     }
+
+    // Insert a given element into the list at a specific position
+    public insert(newElement: any, elementInList: any): boolean {
+        // After seems to be a given element that we want directly before the element we're about to insert
+        const insertPosition = this.find(elementInList);
+
+        if (insertPosition !== -1) {
+            // Add the newElement after the specified elementInList
+            this.dataStore.splice(insertPosition + 1, 0, newElement);
+            // Increement the size of the list to account for the newly added element
+            ++this.listSize;
+            // Signify the element was successfully added to the list
+            return true;
+        }
+        // Element was not found in the list
+        return false;
+    }
+
+    // Determines if a given element is in the list
+    public contains(element: any): boolean {
+        for (const listElement of this.dataStore) {
+            if (listElement === element) {
+                return true;
+            }
+        }
+        // List does not contain the given element
+        return false;
+    }
+
+    public getElement(): any {
+        return this.dataStore[this.position];
+    }
+
+    /* Traversal Methods */
+    public front(): void {
+        this.position = 0;
+    }
+
+    public end(): void {
+        // -1 because the count starts from 0
+        this.position = (this.listSize - 1);
+    }
+
+    public previous(): void {
+        // Check first that this isn't being called on the first element in the list
+        if (this.position > 0) {
+            --this.position;
+        }
+    }
+
+    public next(): void {
+        const lastElement: number = (this.listSize - 1);
+
+        if (this.position < lastElement) {
+            ++this.position;
+        }
+    }
+
+    public currentPosition(): number {
+        return this.position;
+    }
+
+    public moveTo(position: number): void {
+        this.position = position;
+    }
 }
