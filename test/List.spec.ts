@@ -37,4 +37,15 @@ describe("List", () => {
             expect(names.getElement()).to.equal("Gerald");
         });
     });
+
+    describe.only("previous", () => {
+        it("should move to the previous element in the list", () => {
+            names.front();
+            names.next();
+            names.next();
+            names.next();
+            names.previous();
+            expect(names.getElement()).to.equal("Cynthia");
+        });
+    });
 });
