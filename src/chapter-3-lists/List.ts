@@ -107,6 +107,8 @@ export class List {
         // Check first that this isn't being called on the first element in the list
         if (this.position > 0) {
             --this.position;
+        } else {
+            throw new Error(`Position: ${this.position} is the first element of the list.`);
         }
     }
 
@@ -115,6 +117,8 @@ export class List {
 
         if (this.position < lastElement) {
             ++this.position;
+        } else {
+            throw new Error(`Position: ${this.position} is the last element of the list.`);
         }
     }
 
