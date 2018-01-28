@@ -47,5 +47,10 @@ describe("List", () => {
             names.previous();
             expect(names.getElement()).to.equal("Cynthia");
         });
+
+        it("should throw an error when trying to access an element before the beginning of the list", () => {
+            names.front();
+            expect(names.previous.bind(names.previous)).to.throw(Error, `Position: ${this.position} is the first element of the list.`);
+        });
     });
 });
