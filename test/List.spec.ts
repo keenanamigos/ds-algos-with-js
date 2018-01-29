@@ -61,6 +61,14 @@ describe("List", () => {
         });
     });
 
+    describe("moveTo", () => {
+        it("should move to the element at a given position", () => {
+            const newPosition = 4;
+            names.moveTo(newPosition);
+            expect(names.getElement()).to.equal("Bryan");
+        });
+    });
+
     describe("clear", () => {
         it("should clear the contents of the list", () => {
             names.clear();
