@@ -60,4 +60,11 @@ describe("List", () => {
             expect(names.previous.bind(names.previous)).to.throw(Error, `Position: ${this.position} is the first element of the list.`);
         });
     });
+
+    describe("clear", () => {
+        it("should clear the contents of the list", () => {
+            names.clear();
+            expect(names.dataStore.length).to.equal(0);
+        });
+    });
 });
