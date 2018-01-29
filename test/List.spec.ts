@@ -17,6 +17,13 @@ describe("List", () => {
         });
     });
 
+    describe("end", () => {
+        it("should move to the end of the list", () => {
+            names.end();
+            expect(names.getElement()).to.equal("Danny");
+        });
+    });
+
     describe("next", () => {
         it("should move to the next element in the list", () => {
             names.front();
