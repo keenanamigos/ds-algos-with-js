@@ -39,16 +39,17 @@ export class List {
     public remove(element: any): boolean {
         const position: number = this.find(element);
 
-        if (position !== -1) {
-            // Remove this single element from the list if it was found during the lookup
-            this.dataStore.splice(position, 1);
-            // Decrement the size of the list to account for the now removed element
-            --this.listSize;
-            // Signify the element was successfully removed from the list
-            return true;
+        if (position === -1) {
+            // Element was not found in the list
+            return false;
         }
-        // Element was not found in the list
-        return false;
+
+        // Remove this single element from the list if it was found during the lookup
+        this.dataStore.splice(position, 1);
+        // Decrement the size of the list to account for the now removed element
+        --this.listSize;
+        // Signify the element was successfully removed from the list
+        return true;
     }
 
     // Return the current length of the List
