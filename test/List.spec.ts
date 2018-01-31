@@ -79,6 +79,15 @@ describe("List", () => {
         });
     });
 
+    describe("currentPosition", () => {
+        it("should return the current position of 1", () => {
+            names.front();
+            names.next();
+            expect(names.currentPosition()).to.equal(1);
+        });
+    });
+
+    /* Will clear the list and should always be the last test */
     describe("clear", () => {
         it("should clear the contents of the list", () => {
             names.clear();
