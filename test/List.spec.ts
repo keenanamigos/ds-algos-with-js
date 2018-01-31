@@ -99,6 +99,20 @@ describe("List", () => {
         });
     });
 
+    describe("insert", () => {
+        it("should insert the new element after the given element", () => {
+            const elementInList = "Cynthia";
+            const newElement = "Jackson";
+            expect(names.insert(newElement, elementInList)).to.equal(true);
+        });
+
+        it("should return false if the given element cannot be found in the list", () => {
+            const elementInList = "Rhino";
+            const newElement = "Erickson";
+            expect(names.insert(newElement, elementInList)).to.equal(false);
+        });
+    });
+
     /* Will clear the list and should always be the last test */
     describe("clear", () => {
         it("should clear the contents of the list", () => {
