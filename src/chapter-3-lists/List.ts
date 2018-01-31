@@ -63,19 +63,18 @@ export class List {
 
     // Insert a given element into the list at a specific position
     public insert(newElement: any, elementInList: any): boolean {
-        // After seems to be a given element that we want directly before the element we're about to insert
         const insertPosition = this.find(elementInList);
 
         if (insertPosition !== -1) {
             // Add the newElement after the specified elementInList
             this.dataStore.splice(insertPosition + 1, 0, newElement);
-            // Increement the size of the list to account for the newly added element
+            // Increment the size of the list to account for the newly added element
             ++this.listSize;
             // Signify the element was successfully added to the list
             return true;
+        } else {
+            throw new Error(`${elementInList} was not found in the list. ${newElement} was not added to the list.`);
         }
-        // Element was not found in the list
-        return false;
     }
 
     // Determines if a given element is in the list
