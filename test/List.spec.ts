@@ -72,6 +72,11 @@ describe("List", () => {
             const newPosition = 24;
             expect(names.moveTo.bind(names.moveTo, newPosition)).to.throw(Error, `Invalid value. Position given is not between 0 and ${this.listSize - 1}.`);
         });
+
+        it("should throw an error when trying to access a position before the first element in the list", () => {
+            const newPosition = -4;
+            expect(names.moveTo.bind(names.moveTo, newPosition)).to.throw(Error, `Invalid value. Position given is not between 0 and ${this.listSize - 1}.`);
+        });
     });
 
     describe("clear", () => {
