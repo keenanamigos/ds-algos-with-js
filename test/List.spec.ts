@@ -67,6 +67,11 @@ describe("List", () => {
             names.moveTo(newPosition);
             expect(names.getElement()).to.equal("Bryan");
         });
+
+        it("should throw an error when trying to access a position beyond the last element in the list", () => {
+            const newPosition = 24;
+            expect(names.moveTo.bind(names.moveTo, newPosition)).to.throw(Error, `Invalid value. Position given is not between 0 and ${this.listSize - 1}.`);
+        });
     });
 
     describe("clear", () => {
