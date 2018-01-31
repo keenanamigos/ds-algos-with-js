@@ -127,6 +127,12 @@ export class List {
     }
 
     public moveTo(position: number): void {
-        this.position = position;
+        const lastElement: number = (this.listSize - 1);
+
+        if (position < lastElement) {
+            this.position = position;
+        } else {
+            throw new Error(`Attempt to access invalid list position: ${position}. Position: ${lastElement} is currently the last position in the list.`);
+        }
     }
 }
