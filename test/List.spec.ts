@@ -87,6 +87,18 @@ describe("List", () => {
         });
     });
 
+    describe("contains", () => {
+        it("should return true if the list contains the given element", () => {
+            const element = "Cynthia";
+            expect(names.contains(element)).to.equal(true);
+        });
+
+        it("should return false if the list does not contain the given element", () => {
+            const element = "Jackson";
+            expect(names.contains(element)).to.equal(false);
+        });
+    });
+
     /* Will clear the list and should always be the last test */
     describe("clear", () => {
         it("should clear the contents of the list", () => {
