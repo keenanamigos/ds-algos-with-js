@@ -113,6 +113,18 @@ describe("List", () => {
         });
     });
 
+    describe("remove", () => {
+        it("should remove the given element from the list", () => {
+            const element = "Danny";
+            expect(names.remove(element)).to.equal(true);
+        });
+
+        it("should return false if the given element cannot be found in the list", () => {
+            const element = "Jackson";
+            expect(names.remove(element)).to.equal(false);
+        });
+    });
+
     /* Will clear the list and should always be the last test */
     describe("clear", () => {
         it("should clear the contents of the list", () => {
