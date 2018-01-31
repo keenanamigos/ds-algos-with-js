@@ -129,10 +129,10 @@ export class List {
     public moveTo(position: number): void {
         const lastElement: number = (this.listSize - 1);
 
-        if (position < lastElement) {
+        if (position < lastElement && position > 0) {
             this.position = position;
         } else {
-            throw new Error(`Attempt to access invalid list position: ${position}. Position: ${lastElement} is currently the last position in the list.`);
+            throw new Error(`Invalid value. Position given is not between 0 and ${lastElement}.`);
         }
     }
 }
