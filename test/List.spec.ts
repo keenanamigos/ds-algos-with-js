@@ -120,7 +120,7 @@ describe("List", () => {
         });
 
         it("should return false if the given element cannot be found in the list", () => {
-            const element = "Jackson";
+            const element = "Bryson";
             expect(names.remove(element)).to.equal(false);
         });
     });
